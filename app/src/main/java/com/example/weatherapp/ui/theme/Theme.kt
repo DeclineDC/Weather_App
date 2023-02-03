@@ -5,6 +5,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorPalette = darkColors(
     primary = Black,
@@ -33,6 +35,13 @@ fun WeatherAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Compos
         LightColorPalette
     }
 
+    val systemUiController = rememberSystemUiController()
+    systemUiController.setStatusBarColor(
+        color = Black
+    )
+    systemUiController.setSystemBarsColor(
+        color = Black
+    )
     MaterialTheme(
         colors = colors,
         typography = Typography,

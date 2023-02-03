@@ -27,7 +27,10 @@ class MainActivity : ComponentActivity() {
 
                 val navController = rememberNavController()
                 // A surface container using the 'background' color from the theme
-                Scaffold(modifier = Modifier.fillMaxSize()) { paddingValues ->
+                Scaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    backgroundColor = MaterialTheme.colors.primary
+                ) { paddingValues ->
 
                     NavHost(
                         navController = navController,
