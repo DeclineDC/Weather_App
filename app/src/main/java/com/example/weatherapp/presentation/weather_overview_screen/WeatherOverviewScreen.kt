@@ -11,10 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import com.example.weatherapp.R
-import com.example.weatherapp.presentation.weather_overview_screen.components.CurrentWeatherDetailsRow
-import com.example.weatherapp.presentation.weather_overview_screen.components.CurrentWeatherInfoCard
-import com.example.weatherapp.presentation.weather_overview_screen.components.WeatherCard
-import com.example.weatherapp.presentation.weather_overview_screen.components.WeatherOverviewTopBar
+import com.example.weatherapp.presentation.weather_overview_screen.components.*
 import com.example.weatherapp.ui.theme.LocalSpacing
 
 @Composable
@@ -44,6 +41,8 @@ fun WeatherOverviewScreen() {
                 WeatherCard()
             }
         }
+        Spacer(modifier = Modifier.padding(spacing.spaceMedium))
+        SunriseAndSunsetCard()
 
 
     }
