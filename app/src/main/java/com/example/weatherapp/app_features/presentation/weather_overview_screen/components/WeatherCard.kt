@@ -1,4 +1,4 @@
-package com.example.weatherapp.presentation.weather_overview_screen.components
+package com.example.weatherapp.app_features.presentation.weather_overview_screen.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape

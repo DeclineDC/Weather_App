@@ -1,6 +1,5 @@
-package com.example.weatherapp.presentation.weather_overview_screen.components
+package com.example.weatherapp.app_features.presentation.weather_overview_screen.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -17,7 +16,7 @@ import com.example.weatherapp.R
 import com.example.weatherapp.ui.theme.LocalSpacing
 
 @Composable
-fun CurrentWeatherInfoCard() {
+fun SunriseAndSunsetCard() {
 
     val spacing = LocalSpacing.current
 
@@ -27,6 +26,7 @@ fun CurrentWeatherInfoCard() {
         backgroundColor = MaterialTheme.colors.secondary,
         modifier = Modifier.fillMaxWidth()
     ) {
+
         Row(
             Modifier
                 .fillMaxWidth()
@@ -38,46 +38,33 @@ fun CurrentWeatherInfoCard() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(text = "Sunrise", color = Color.Gray)
+                Text(text = "8:13 AM", color = Color.White)
                 Icon(
                     painter = painterResource(id = R.drawable.ic_wind),
                     contentDescription = null,
                     Modifier.size(32.dp)
                 )
-                Text(text = "10 m/s", color = Color.White)
-                Text(text = "Wind", color = Color.Gray)
+
 
             }
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(text = "Sunset", color = Color.Gray)
+                Text(text = "8:13 AM", color = Color.White)
                 Icon(
                     painter = painterResource(id = R.drawable.ic_wind),
                     contentDescription = null,
                     Modifier.size(32.dp)
                 )
-                Text(text = "10 m/s", color = Color.White)
-                Text(text = "Wind", color = Color.Gray)
+
 
             }
-            Column(
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_wind),
-                    contentDescription = null,
-                    Modifier.size(32.dp)
-                )
-                Text(text = "10 m/s", color = Color.White)
-                Text(text = "Wind", color = Color.Gray)
 
-            }
         }
-
 
     }
 
 }
-
-

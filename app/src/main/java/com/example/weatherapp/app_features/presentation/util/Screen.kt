@@ -1,4 +1,4 @@
-package com.example.weatherapp.presentation.util
+package com.example.weatherapp.app_features.presentation.util
 
 sealed class Screen(val route: String) {
     object WeatherOverviewScreen : Screen("weather_overview_screen")

@@ -15,9 +15,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.weatherapp.presentation.util.Screen
-import com.example.weatherapp.presentation.weather_overview_screen.WeatherOverviewScreen
+import com.example.weatherapp.app_features.presentation.util.Screen
+import com.example.weatherapp.app_features.presentation.weather_overview_screen.WeatherOverviewScreen
 import com.example.weatherapp.ui.theme.WeatherAppTheme
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

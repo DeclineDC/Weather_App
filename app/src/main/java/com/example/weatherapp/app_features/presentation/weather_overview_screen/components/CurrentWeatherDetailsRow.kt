@@ -1,4 +1,4 @@
-package com.example.weatherapp.presentation.weather_overview_screen.components
+package com.example.weatherapp.app_features.presentation.weather_overview_screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
