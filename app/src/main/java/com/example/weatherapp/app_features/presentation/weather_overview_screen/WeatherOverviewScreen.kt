@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.toLowerCase
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.weatherapp.R
 import com.example.weatherapp.app_features.presentation.weather_overview_screen.components.*
@@ -41,7 +42,10 @@ fun WeatherOverviewScreen(
                 location = getLocationName(
                     lat = state.latitude,
                     long = state.longitude
-                ), date = data.time.toString()
+                ),
+                date = "${data.time.dayOfMonth} ${
+                    data.time.month.toString().lowercase()
+                }, ${data.time.dayOfWeek.toString().lowercase()}"
             )
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             CurrentWeatherDetailsRow(

@@ -44,7 +44,8 @@ fun CurrentWeatherInfoCard(
                 Icon(
                     painter = painterResource(id = R.drawable.ic_wind),
                     contentDescription = null,
-                    Modifier.size(32.dp)
+                    Modifier.size(32.dp),
+                    tint = Color.Gray
                 )
                 Text(text = "${weatherData.windSpeed.toInt()} m/s", color = Color.White)
                 Text(text = "Wind", color = Color.Gray)
@@ -55,10 +56,12 @@ fun CurrentWeatherInfoCard(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_wind),
+                    painter = painterResource(id = R.drawable.humidity),
                     contentDescription = null,
-                    Modifier.size(32.dp)
+                    Modifier.size(32.dp),
+                    tint = Color.Unspecified
                 )
+                Spacer(modifier = Modifier.padding(spacing.spaceExtraSmall))
                 Text(text = "${weatherData.humidity.toInt()}%", color = Color.White)
                 Text(text = "Humidity", color = Color.Gray)
 
@@ -68,10 +71,12 @@ fun CurrentWeatherInfoCard(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_wind),
+                    painter = painterResource(id = R.drawable.pressure),
                     contentDescription = null,
-                    Modifier.size(32.dp)
+                    Modifier.size(32.dp),
+                    tint = Color.Unspecified
                 )
+                Spacer(modifier = Modifier.padding(spacing.spaceExtraSmall))
                 Text(text = weatherData.pressure.toInt().toString(), color = Color.White)
                 Text(text = "Pressure", color = Color.Gray)
 
