@@ -7,17 +7,27 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.weatherapp.R
+import com.example.weatherapp.app_features.domain.model.WeatherData
 import com.example.weatherapp.ui.theme.LocalSpacing
+import java.time.format.DateTimeFormatter
 
 @Composable
-fun WeatherCard() {
+fun WeatherCard(
+    weatherData: WeatherData
+) {
 
+    val formattedTime = remember(weatherData) {
+        weatherData.time.format(
+            DateTimeFormatter.ofPattern("HH:mm")
+        )
+    }
     val spacing = LocalSpacing.current
 
     Card(
@@ -36,15 +46,16 @@ fun WeatherCard() {
                 top = spacing.space12
             )
         ) {
-            Text(text = "10 am", color = Color.Gray)
+            Text(text = formattedTime, color = Color.Gray)
             Spacer(modifier = Modifier.padding(spacing.spaceExtraSmall))
             Icon(
-                painter = painterResource(id = R.drawable.ic_sunny),
+                painter = painterResource(id = weatherData.weatherType.iconRes),
                 contentDescription = null,
-                Modifier.size(40.dp)
+                Modifier.size(40.dp),
+                tint = Color.Unspecified
             )
             Spacer(modifier = Modifier.padding(spacing.spaceExtraSmall))
-            Text(text = "16°", color = Color.White)
+            Text(text = "${weatherData.temperatureCelsius.toInt()}°", color = Color.White)
 
         }
 

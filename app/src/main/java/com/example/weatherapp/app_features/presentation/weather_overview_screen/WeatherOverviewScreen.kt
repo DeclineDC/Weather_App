@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -15,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.toLowerCase
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.weatherapp.R
+import com.example.weatherapp.app_features.domain.model.WeatherData
 import com.example.weatherapp.app_features.presentation.weather_overview_screen.components.*
 import com.example.weatherapp.ui.theme.LocalSpacing
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -58,11 +60,14 @@ fun WeatherOverviewScreen(
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             CurrentWeatherInfoCard(weatherData = data)
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
-            LazyRow(Modifier.fillMaxWidth()) {
-                items(12) {
-                    WeatherCard()
+            state.weatherInfo?.weatherDataPerDay?.get(0)?.let { data ->
+                LazyRow(Modifier.fillMaxWidth()) {
+                    items(data) { weatherData ->
+                        WeatherCard(weatherData = weatherData)
+                    }
                 }
             }
+
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             SunriseAndSunsetCard()
 
