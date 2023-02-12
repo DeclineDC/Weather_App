@@ -1,5 +1,6 @@
 package com.example.weatherapp.app_features.presentation.weather_overview_screen
 
+import android.app.Application
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -9,11 +10,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.weatherapp.R
 import com.example.weatherapp.app_features.presentation.weather_overview_screen.components.*
 import com.example.weatherapp.ui.theme.LocalSpacing
+import dagger.hilt.android.qualifiers.ApplicationContext
 
 @Composable
 fun WeatherOverviewScreen(
@@ -21,6 +24,7 @@ fun WeatherOverviewScreen(
 
     val viewModel: WeatherOverviewViewModel = hiltViewModel()
     val state = viewModel.state
+    val context = LocalContext.current
 
     val spacing = LocalSpacing.current
 
