@@ -27,7 +27,6 @@ class WeatherOverviewViewModel @Inject constructor(
         private set
 
 
-
     init {
         loadWeatherInfo()
     }
@@ -47,6 +46,8 @@ class WeatherOverviewViewModel @Inject constructor(
                     is Resource.Success -> {
                         state = state.copy(
                             weatherInfo = result.data,
+                            latitude = currentLocation.latitude,
+                            longitude = currentLocation.longitude,
                             isLoading = false,
                             error = null
                         )

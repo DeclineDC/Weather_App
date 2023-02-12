@@ -24,9 +24,10 @@ fun WeatherOverviewScreen(
 
     val viewModel: WeatherOverviewViewModel = hiltViewModel()
     val state = viewModel.state
-    val context = LocalContext.current
 
     val spacing = LocalSpacing.current
+
+
 
     Column(
         modifier = Modifier
@@ -36,7 +37,12 @@ fun WeatherOverviewScreen(
     ) {
         state.weatherInfo?.currentWeatherData?.let { data ->
 
-            WeatherOverviewTopBar(location = "Tessenderlo", date = data.time.toString())
+            WeatherOverviewTopBar(
+                location = getLocationName(
+                    lat = state.latitude,
+                    long = state.longitude
+                ), date = data.time.toString()
+            )
             Spacer(modifier = Modifier.padding(spacing.spaceMedium))
             CurrentWeatherDetailsRow(
                 temperature = data.temperatureCelsius.toInt().toString(),
