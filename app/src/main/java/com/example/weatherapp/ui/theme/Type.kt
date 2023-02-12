@@ -13,10 +13,14 @@ val russo = FontFamily(
     Font(R.font.russo_one_regular)
 )
 
+val chakra = FontFamily(
+    Font(R.font.chakrapetch_regular)
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     body1 = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = chakra,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),

@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.weatherapp.R
 import com.example.weatherapp.app_features.domain.model.WeatherData
 import com.example.weatherapp.ui.theme.LocalSpacing
@@ -47,8 +48,9 @@ fun CurrentWeatherInfoCard(
                     Modifier.size(32.dp),
                     tint = Color.Gray
                 )
-                Text(text = "${weatherData.windSpeed.toInt()} m/s", color = Color.White)
-                Text(text = "Wind", color = Color.Gray)
+                Spacer(modifier = Modifier.padding(spacing.spaceExtraSmall))
+                Text(text = "${weatherData.windSpeed.toInt()} km/h", color = Color.White)
+                Text(text = "Wind", color = Color.Gray, fontSize = 14.sp)
 
             }
             Column(
@@ -63,7 +65,7 @@ fun CurrentWeatherInfoCard(
                 )
                 Spacer(modifier = Modifier.padding(spacing.spaceExtraSmall))
                 Text(text = "${weatherData.humidity.toInt()}%", color = Color.White)
-                Text(text = "Humidity", color = Color.Gray)
+                Text(text = "Humidity", color = Color.Gray, fontSize = 14.sp)
 
             }
             Column(
@@ -77,8 +79,8 @@ fun CurrentWeatherInfoCard(
                     tint = Color.Unspecified
                 )
                 Spacer(modifier = Modifier.padding(spacing.spaceExtraSmall))
-                Text(text = weatherData.pressure.toInt().toString(), color = Color.White)
-                Text(text = "Pressure", color = Color.Gray)
+                Text(text = "${weatherData.pressure.toInt()} hpa", color = Color.White)
+                Text(text = "Pressure", color = Color.Gray, fontSize = 14.sp)
 
             }
         }

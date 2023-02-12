@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun CurrentWeatherDetailsRow(
@@ -23,7 +24,7 @@ fun CurrentWeatherDetailsRow(
 
         Column(Modifier.weight(.5f)) {
             Text(text = "$temperature°", style = MaterialTheme.typography.h3, color = Color.White)
-            Text(text = weatherDescription, color = Color.Gray)
+            Text(text = weatherDescription, color = Color.Gray, fontSize = 18.sp)
 
         }
 

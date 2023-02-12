@@ -68,9 +68,6 @@ fun WeatherOverviewScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.padding(spacing.spaceMedium))
-            SunriseAndSunsetCard()
-
         }
 
 
